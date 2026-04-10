@@ -24,7 +24,7 @@ function FoodSelector({ onFoodSelect, onNext }) {
 
   return (
     <div className="food-container">
-      <h2>What would you like to order for our dinner?</h2>
+      <h2>What would your beautiful heart desire for our dinner? 🍽️❤️</h2>
       <div className="food-options">
         {foods.map((food, index) => (
           <div key={index} className="food-item" onClick={() => handleFoodSelect(food)}>

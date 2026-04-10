@@ -1,7 +1,7 @@
 body {
-  font-family: 'Noto Sans JP', sans-serif; /* Use Noto Sans JP for a cleaner look */
-  background-color: #FBE4E6; /* Consistent light pink */
-  color: #444; /* Darker color for better readability */
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  background: linear-gradient(135deg, #FFE8E5 0%, #FFD6DF 100%); /* Soft romantic gradient */
+  color: #5A1827; /* Deep maroon/wine color for elegant feel */
   text-align: center;
   height: 100vh; /* Full viewport height */
   display: flex;
@@ -9,29 +9,46 @@ body {
   justify-content: center; /* Centers content horizontally */
 }
 
+h1, h2, h3 {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  color: #B83A4E;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
 button {
   font-size: 1.25em; /* Larger font size for better readability */
-  padding: 20px 40px; /* Larger buttons */
-  margin: 20px; /* More space around buttons */
+  font-family: 'Playfair Display', serif;
+  padding: 15px 35px; /* Larger buttons but slightly refined */
+  margin: 15px; /* More space around buttons */
   width: auto; /* Auto width based on content */
-  border-radius: 30px; /* Rounded borders */
-  background-color: #FFC0CB; /* A soft pink that fits the light theme */
+  border-radius: 25px; /* Elegant rounded borders */
+  background-color: #D94862; /* Romantic deep rose/pink */
   color: white; /* White text for contrast */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: none;
+  box-shadow: 0px 4px 10px rgba(217, 72, 98, 0.3); /* Soft pinkish shadow */
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: #FFA6C9; /* Slightly darker pink on hover */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  background-color: #B83A4E; /* Darker rose on hover */
+  box-shadow: 0px 6px 14px rgba(217, 72, 98, 0.5); /* Emphasized shadow */
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
 /* Enlarged input fields */
 input[type='date'] {
   font-size: 1.2em; /* Larger font size */
+  font-family: 'Playfair Display', serif;
   padding: 10px 20px; /* More padding */
   border-radius: 20px; /* Rounded borders */
-  border: 2px solid #FFC0CB; /* Soft pink border */
+  border: 1px solid #D94862; /* Soft rose border */
   margin-top: 20px; /* Space from the preceding text */
+  color: #5A1827;
+  background-color: #fffafb;
 }
 
 /* Container adjustments */

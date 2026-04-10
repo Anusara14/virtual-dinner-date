@@ -1,22 +1,27 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffe0f0; /* Light pink */
-    color: #333;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #FFE8E5 0%, #FFD6DF 100%);
+    color: #5A1827;
     text-align: center;
     padding: 50px;
 }
 
 button {
+    font-family: 'Playfair Display', serif;
     margin: 10px;
-    padding: 10px 20px;
-    background-color: #fff;
-    border: 2px solid #ff1493; /* Deep pink */
-    border-radius: 5px;
+    padding: 15px 35px;
+    background-color: #D94862;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(217, 72, 98, 0.3);
+    transition: all 0.3s ease;
+    font-size: 1.1em;
 }
 
 button:hover {
-    background-color: #ff1493;
-    color: #fff;
+    background-color: #B83A4E;
+    box-shadow: 0px 6px 14px rgba(217, 72, 98, 0.5);
+    transform: translateY(-2px);
 }
-

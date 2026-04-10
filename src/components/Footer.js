@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
     return (
         <footer className="footer">
-            <p>Designed and Developed by Areen Khalaila</p>
+            <p>Designed and Developed by Anusara Ranasinghe</p>
         </footer>
     );
 }

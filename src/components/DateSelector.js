@@ -32,9 +32,9 @@ function DateSelector({ onDateSet, onNext }) {
 
   return (
     <div>
-      <h2>Choose a date for our virtual dinner:</h2>
+      <h2>Choose a perfect date for our romantic virtual dinner: 🌹</h2>
       <input type="date" value={localDate} onChange={handleDateChange} />
-      <button onClick={handleNext}>Next Up: Food Fun! (っ˘ڡ˘ς) 🍴</button>
+      <button onClick={handleNext}>Next Up: Delicious Food! (っ˘ڡ˘ς) 🍴</button>
     </div>
   );
 }

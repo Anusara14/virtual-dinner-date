@@ -8,9 +8,9 @@ function PositiveMessage({ onNext }) {
   };
   return (
     <div>
-      <h2>Yay! ✨🎉 You said yes! ٩(◕‿◕｡)۶</h2>
+      <h2>Yay! ✨💖 You've made me so happy! ٩(◕‿◕｡)۶</h2>
       <img className="reaction" src={catplay} alt="Cat Playing"/>
-      <button onClick={onNext}>Let's Pick a Date! ✨📅💖</button>  
+      <button onClick={onNext}>Let's Pick a Date, My Love! ✨📅💖</button>  
     </div>
   );
 }

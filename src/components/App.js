@@ -6,8 +6,6 @@ import DateSelector from './DateSelector';
 import FoodSelector from './FoodSelector';
 import Confirmation from './Confirmation';
 import HeartEffect from './HeartEffect'; 
-import Footer from './Footer'; 
-
 
 function App() {
   const [stage, setStage] = useState('initial');
@@ -40,7 +38,6 @@ function App() {
       {stage === 'dateSelection' && <DateSelector onDateSet={handleDateSelection} onNext={() => setStage('foodSelection')} />}
       {stage === 'foodSelection' && <FoodSelector onFoodSelect={handleFoodSelection} onNext={() => setStage('confirmation')} />}
       {stage === 'confirmation' && <Confirmation date={date} food={food} />}
-      <Footer />
     </div>
   );
 }
