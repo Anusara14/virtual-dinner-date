@@ -45,7 +45,7 @@ const HeartEffect = () => {
           heart.time -= 16; 
           heart.y -= 1; // drift upwards
           heart.style.top = `${heart.y}px`;
-          heart.style.left = `${heart.x + heart.direction * heart.bound * Math.sin(heart.y * scale / 30) / heart.y * 100}px`;
+          heart.style.left = `${heart.x + heart.direction * heart.bound * Math.sin(heart.y * (heart.scale || 0.2) / 30) / heart.y * 100}px`;
         } else {
           heart.parentNode.removeChild(heart);
           hearts.splice(i, 1);
