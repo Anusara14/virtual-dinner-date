@@ -71,4 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ---
 
-**Designed and Developed by Anusara Ranasinghe**
+**Redeveloped by Anusara Ranasinghe**
