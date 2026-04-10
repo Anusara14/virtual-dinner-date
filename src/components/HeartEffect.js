@@ -1,21 +1,19 @@
-import React, { useEffect } from 'react';
-import './HeartEffect.css'; // Make sure the CSS is correctly linked
+import { useEffect } from 'react';
+import './HeartEffect.css';
 
 const HeartEffect = () => {
   useEffect(() => {
-    // Create a container for the hearts
     const brd = document.createElement("DIV");
     brd.style.position = 'fixed';
     brd.style.top = '0';
     brd.style.left = '0';
     brd.style.width = '100vw';
     brd.style.height = '100vh';
-    brd.style.pointerEvents = 'none'; // Allow mouse events to pass through
+    brd.style.pointerEvents = 'none'; 
+    brd.style.zIndex = '9999';
     document.body.appendChild(brd);
 
     const hearts = [];
-    let down = false;
-    let event = null;
 
     const generateHeart = (x, y, xBound, xStart, scale) => {
       var heart = document.createElement("DIV");
@@ -24,7 +22,7 @@ const HeartEffect = () => {
       heart.style.left = `${x}px`;
       heart.style.top = `${y}px`;
       heart.style.transform = `scale(${scale})`;
-      heart.time = 3000; // duration of animation
+      heart.time = 5000; // longer life
       heart.x = x;
       heart.y = y;
       heart.bound = xBound;
@@ -33,48 +31,21 @@ const HeartEffect = () => {
       return heart;
     };
 
-    // Event handlers
-    const onMouseDown = (e) => {
-      down = true;
-      event = e;
-    };
-
-    const onMouseUp = () => {
-      down = false;
-    };
-
-    const onMouseMove = (e) => {
-      event = e;
-    };
-
-    const onTouchStart = (e) => {
-      down = true;
-      event = e.touches[0];
-    };
-
-    const onTouchEnd = () => {
-      down = false;
-    };
-
-    const onTouchMove = (e) => {
-      event = e.touches[0];
-    };
-
-    // Adding event listeners
-    document.addEventListener('mousedown', onMouseDown);
-    document.addEventListener('mouseup', onMouseUp);
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('touchstart', onTouchStart);
-    document.addEventListener('touchend', onTouchEnd);
-    document.addEventListener('touchmove', onTouchMove);
+    // Automatic heart shower logic (creates hearts randomly at the bottom)
+    const showerId = setInterval(() => {
+      const x = Math.random() * window.innerWidth;
+      const scale = Math.random() * 0.4 + 0.1;
+      const xStart = Math.random() > 0.5 ? 1 : -1;
+      generateHeart(x, window.innerHeight + 20, 50, xStart, scale);
+    }, 400);
 
     const frame = () => {
       hearts.forEach((heart, i) => {
         if (heart.time > 0) {
-          heart.time -= 16; // decrease time left
-          heart.y -= 0.5; // speed of heart moving up
+          heart.time -= 16; 
+          heart.y -= 1; // drift upwards
           heart.style.top = `${heart.y}px`;
-          heart.style.left = `${heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 100}px`;
+          heart.style.left = `${heart.x + heart.direction * heart.bound * Math.sin(heart.y * scale / 30) / heart.y * 100}px`;
         } else {
           heart.parentNode.removeChild(heart);
           hearts.splice(i, 1);
@@ -84,20 +55,16 @@ const HeartEffect = () => {
 
     const id = setInterval(frame, 16);
 
-    // Cleanup function
     return () => {
       clearInterval(id);
-      document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('mouseup', onMouseUp);
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('touchstart', onTouchStart);
-      document.removeEventListener('touchend', onTouchEnd);
-      document.removeEventListener('touchmove', onTouchMove);
-      document.body.removeChild(brd); // Remove the hearts container
+      clearInterval(showerId);
+      if (document.body.contains(brd)) {
+        document.body.removeChild(brd);
+      }
     };
   }, []);
 
-  return null; // No need to return JSX, since we are manipulating the DOM directly
+  return null;
 };
 
 export default HeartEffect;
